@@ -1,0 +1,41 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/security?characterEncoding=UTF-8
+    username: root
+    password: 970712
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 100
+        min-idle: 5
+        max-idle: 10
+        max-wait: 1000
+    timeout: 30000
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  application:
+    name: resources
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    pers:
+      guzx:
+        customersecuritydemo:
+          mapper: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
+          - info
+          - env
+debug: false

@@ -22,14 +22,10 @@ public class TokenConfig {
 
     private static final String SIGN_KEY = "uaa";
 
-    @Resource
-    private DataSource dataSource;
-
     @Primary
     @Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(tokenConverter());
-//        return new JwtTokenStore(tokenConverter());
     }
 
     @Bean

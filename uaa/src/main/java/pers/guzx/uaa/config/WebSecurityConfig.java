@@ -36,19 +36,8 @@ import java.util.ArrayList;
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-
-    /*@Override
-    @Bean
-    public UserDetailsService userDetailsService() {
-        InMemoryUserDetailsManager userDetailsManager = new
-                InMemoryUserDetailsManager(User.withUsername("admin").password(passwordEncoder().encode("admin"))
-                .authorities("mobile").build()
-                , User.withUsername("manager").password(passwordEncoder().encode("manager"))
-                .authorities("salary").build()
-                , User.withUsername("worker").password(passwordEncoder().encode("worker"))
-                .authorities("worker").build());
-        return userDetailsManager;
-    }*/
+    @Resource
+    private UserAuthDetailsServiceImpl userDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -62,12 +51,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * password模式報錯Internal Server Error
+     *
      * @param auth
      * @throws Exception
      */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService());
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Bean

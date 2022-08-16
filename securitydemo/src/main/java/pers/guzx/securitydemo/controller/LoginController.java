@@ -35,4 +35,9 @@ public class LoginController {
                 (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return user.getUsername();
     }
+
+    @GetMapping("/demo")
+    public String getCommon() {
+        return "common demo";
+    }
 }

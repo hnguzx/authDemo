@@ -30,7 +30,7 @@ public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/mobile/**").hasAuthority("mobile")
                 .antMatchers("/salary/**").hasAuthority("salary")
-//                .antMatchers("/common/**").permitAll()
+                .antMatchers("/common/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin();

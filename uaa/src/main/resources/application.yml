@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/security?characterEncoding=UTF-8
     username: root
-    password: 970712
+    password: 123456
   redis:
     host: 127.0.0.1
     port: 6379
@@ -38,4 +38,3 @@ management:
           - health
           - info
           - env
-debug: false

@@ -5,6 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/basicauth/pom.xml" />
+        <option value="$PROJECT_DIR$/resources/pom.xml" />
+        <option value="$PROJECT_DIR$/securitydemo/pom.xml" />
+        <option value="$PROJECT_DIR$/uaa/pom.xml" />
       </list>
     </option>
   </component>
